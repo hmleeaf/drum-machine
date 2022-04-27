@@ -1,5 +1,5 @@
 import Slider from '@mui/material/Slider';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from './context';
 
 function VolumeSlider( { type, channel } ) {

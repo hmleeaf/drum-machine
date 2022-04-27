@@ -112,6 +112,7 @@ const initialState = {
 const AppProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const [notes, setNotes] = useState(state.noteStorage[state.activeTab]); 
+    const [loading, setLoading] = useState(true);
     const MIDI = window.MIDI;
     //console.log(state);
 
@@ -140,6 +141,8 @@ const AppProvider = ({ children }) => {
 
                 MIDI.setVolume(0, 127); 
                 MIDI.programChange(9, 0);
+
+                setLoading(false);
             }
         })
     }, [])
@@ -199,6 +202,7 @@ const AppProvider = ({ children }) => {
             value={{
                 ...state, 
                 notes, 
+                loading, 
                 toggleNote, 
                 togglePlaying, 
                 changeInstrument, 

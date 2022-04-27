@@ -1,3 +1,4 @@
+import React from 'react';
 import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import Slider from '@mui/material/Slider'; 

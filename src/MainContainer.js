@@ -1,3 +1,4 @@
+import React from 'react';
 import ControlPanel from './ControlPanel';
 import Soundboard from './Soundboard';
 import Divider from '@mui/material/Divider';

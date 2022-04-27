@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button, ButtonGroup } from '@mui/material';
 import { FaPlay, FaStop } from 'react-icons/fa';
 import { useGlobalContext } from './context';
