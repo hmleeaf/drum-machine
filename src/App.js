@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import MainContainer from './MainContainer';
+import { MIDIProvider } from './contextMIDI';
+import { Stack, Typography } from '@mui/material';
+import { FaDrum } from 'react-icons/fa';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <MIDIProvider>
+      <Stack 
+        direction="row"
+        align="center"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          marginY: 4, 
+        }}
+      >
+        <FaDrum />
+        <Typography 
+          variant="h2"
+          sx={{
+            marginX: 4, 
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Drum Machine
+        </Typography>
+        <FaDrum />
+      </Stack>
+      <MainContainer />
+    </MIDIProvider>
   );
 }
 
