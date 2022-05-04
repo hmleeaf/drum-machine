@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup } from '@mui/material';
 import { FaPlay, FaStop } from 'react-icons/fa';
 import { useGlobalContext } from './context';
 
 function SettingButton({ type }) {
     const { playing, togglePlaying, activeTab, tabNotEmpty, switchTab, startDemo } = useGlobalContext();
+    const [playDisabled, setPlayDisabled] = useState(false);
+
+    useEffect(() => {
+        setPlayDisabled(true);
+        const timeout = setTimeout(() => {
+            setPlayDisabled(false);
+        }, 100)
+        return () => {clearTimeout(timeout)}
+    }, [playing])
 
     if (type === "PLAY") {
         return ( 
-            <Button variant="outlined" sx={{paddingY: 3, paddingX: 5, fontSize: 18}} onClick={ togglePlaying }>
+            <Button 
+                variant="outlined" 
+                sx={{
+                    paddingY: 3, 
+                    paddingX: 5, 
+                    fontSize: 18
+                }} 
+                onClick={ togglePlaying }
+                disabled={playDisabled}
+            >
                 { playing ? <FaStop /> : <FaPlay />}
             </Button>
         ); 
