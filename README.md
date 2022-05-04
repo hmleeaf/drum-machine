@@ -1,5 +1,5 @@
 # Simple Drum Machine
-## *Mini Project for COMP4431 (HKUST 2021-2022 Spring Semester)*
+*Mini Project for COMP4431 (HKUST 2021-2022 Spring Semester)*
 
 *Currently hosted at: https://boisterous-semifreddo-f253f5.netlify.app/*
 *(As of 4 May, 2022)*
